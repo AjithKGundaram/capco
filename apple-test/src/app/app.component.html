@@ -1,0 +1,115 @@
+<button id="show-requisitions--btn" (click)="openModal('show-requisitions')">Show TableComponent</button>
+<app-modal id="show-requisitions">
+  <div class="modal">
+    <div class="modal-body">
+      <button class="modal-close" (click)="closeModal('show-requisitions');">
+        <i class="icon ion-android-close"></i>
+      </button>
+
+      <div class="requisitions-container">
+        <!-- <h1 class="requisitions-add">Add Sarah Gutierrez to Requisition</h1> -->
+
+        <!-- <div class="requisitions-tabs">
+          <button (click)="loadMyRequisitions()" class="requisitions-tabs-btn" [ngClass]="{'active': active === 'myrequisitions' }">My Requisitions</button>
+          <button (click)="loadAllRequisitions()" class="requisitions-tabs-btn" [ngClass]="{'active': active === 'allrequisitions' }">All Requisitions</button>
+        </div> -->
+        <!-- end requisitions tabs -->
+
+        <!-- <div class="requisitions-search">
+          <label for="search" class="requisitions-search--label">
+            Search for keywords
+          </label>
+          <div class="requisitions-search--control">
+            <input [(ngModel)]="requisitionSearchText" id="search" class="requisitions-search--control__input" placeholder="Search by Requisition Name, Requisition ID, Recruiter, Hiring Manager"
+              type="text" autocomplete="off" />
+            <div id="icon" class="requisitions-search--control__icon">
+              <i class="ion-ios-search-strong"></i>
+            </div>
+          </div>
+        </div> -->
+        <!-- end requisitions-search -->
+
+        <div class="requisitions-data">
+          <div class="requisitions-data--meta">
+            <!-- <p class="requisitions-data--meta__selected">
+              1 Requisition Selected
+            </p> -->
+            <p class="requisitions-data--meta__results">
+              {{ pager.currentPage*10 }} of {{ requisitionsList.length }} Results
+            </p>
+          </div>
+          <div class="requisitions-data--table" >
+            <div *ngIf="loading" class="requisitions-data--table__loading">
+              <span>Loading...</span>
+            </div>
+            <div class="requisitions-data--table__head">
+              <div class="requisitions-data--table__cell"></div>
+              <div sortable-column="requisition" sort-direction="asc" class="requisitions-data--table__cell">Name</div>
+              <div class="requisitions-data--table__cell">Phone</div>
+              <div class="requisitions-data--table__cell">Email</div>
+              <div class="requisitions-data--table__cell">Company</div>
+              <div class="requisitions-data--table__cell">Date Entered</div>
+              <div class="requisitions-data--table__cell">Organization Number</div>
+              <div class="requisitions-data--table__cell">Address 1</div>
+              <div class="requisitions-data--table__cell">City</div>
+              <div class="requisitions-data--table__cell">Zip</div>
+              <div class="requisitions-data--table__cell">Geo</div>
+              <div class="requisitions-data--table__cell">Pan</div>
+              <div class="requisitions-data--table__cell">Pin</div>
+              <div class="requisitions-data--table__cell">Id</div>
+              <div class="requisitions-data--table__cell">Status</div>
+              <div class="requisitions-data--table__cell">Fee</div>
+              <div class="requisitions-data--table__cell">Guid</div>
+              <div class="requisitions-data--table__cell">Date of Exist</div>
+              <div class="requisitions-data--table__cell">Date First</div>
+              <div class="requisitions-data--table__cell">Date of Recent</div>
+              <div sortable-column="id" class="requisitions-data--table__cell">Url</div>
+           </div>
+           
+            <div class="requisitions-data--table__body">
+              <div class="requisitions-data--table__row" [@fade] *ngFor="let requisition of requisitionsList ">
+                <div class="requisitions-data--table__cell">
+                  <input type="checkbox" />
+                </div>
+                <div class="requisitions-data--table__cell">{{ requisition.name }}</div>
+                <div class="requisitions-data--table__cell">{{ requisition.phone }}</div>
+                <div class="requisitions-data--table__cell">{{ requisition.email }}</div>
+                <div class="requisitions-data--table__cell">{{ requisition.company }}</div>
+                <div class="requisitions-data--table__cell">{{ requisition.date_entry }}</div>
+                <div class="requisitions-data--table__cell">{{ requisition.org_num }}</div>
+                <div class="requisitions-data--table__cell">{{ requisition.address_1 }}</div>
+                <div class="requisitions-data--table__cell">{{ requisition.city }}</div>
+                <div class="requisitions-data--table__cell">{{ requisition.zip }}</div>
+                <div class="requisitions-data--table__cell">{{ requisition.geo }}</div>
+                <div class="requisitions-data--table__cell">{{ requisition.pan }}</div>
+                <div class="requisitions-data--table__cell">{{ requisition.pin }}</div>
+                <div class="requisitions-data--table__cell">{{ requisition.id }}</div>
+                <div class="requisitions-data--table__cell">{{ requisition.status }}</div>
+                <div class="requisitions-data--table__cell">{{ requisition.fee }}</div>
+                <div class="requisitions-data--table__cell">{{ requisition.guid }}</div>
+                <div class="requisitions-data--table__cell">{{ requisition.date_exit || dd/MM/yyyy }}</div>
+                <div class="requisitions-data--table__cell">{{ requisition.date_first }}</div>
+                <div class="requisitions-data--table__cell">{{ requisition.date_recent }}</div>
+                <div class="requisitions-data--table__cell">{{ requisition.url }}</div>
+            </div>
+            </div>
+          </div>
+        </div>
+        <!-- end requisitions-table -->
+
+        <div class="requisitions-pagination">
+          <button (click)="goto(pager.currentPage-1)" type="button" class="requisitions-pagination--prev">
+            <i class="ion-ios-arrow-back"></i>
+          </button>
+          <div class="requisitions-pagination--meta">
+            <span>{{ pager.currentPage }}</span> of {{ pager.totalPages }}
+          </div>
+          <button (click)="goto(pager.currentPage+1)" type="button" class="requisitions-pagination--next">
+            <i class="ion-ios-arrow-forward"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-background"></div>
+</app-modal>

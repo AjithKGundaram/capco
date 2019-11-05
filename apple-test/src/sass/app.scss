@@ -1,0 +1,55 @@
+/* EXAMPLE STYLES
+-------------------------------*/
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'PT Sans', sans-serif;
+  padding: 20px;
+  text-align: center;
+}
+
+nav {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+
+  a {
+    margin-right: 8px;
+  }
+}
+
+h1 {
+  font-weight: normal;
+  margin-top: 0;
+}
+
+input[type='text'] {
+  display: block;
+  width: 100%;
+  font-family: 'PT Sans', sans-serif;
+}
+
+.credits {
+  margin-top: 30px;
+  border-top: 1px solid #ddd;
+  text-align: center;
+}
+
+#show-requisitions--btn {
+  min-height: 36px;
+  padding: 0 16px;
+  background: none;
+  cursor: pointer;
+  border-radius: 4px;
+  outline: none;
+  font-size: 14px;
+  border-color: #439fe7 !important;
+  background: linear-gradient(#439fe7, #1279c9);
+  color: #ffffff;
+}
