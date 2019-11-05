@@ -7,18 +7,13 @@
       </button>
 
       <div class="requisitions-container">
-    
-
         <div class="requisitions-data">
           <div class="requisitions-data--meta">
-            <!-- <p class="requisitions-data--meta__selected">
-              1 Requisition Selected
-            </p> -->
             <p class="requisitions-data--meta__results">
               {{ pager.currentPage*10 }} of {{ requisitionsList.length }} Results
             </p>
           </div>
-          <div class="requisitions-data--table" >
+          <div class="requisitions-data--table">
             <div *ngIf="loading" class="requisitions-data--table__loading">
               <span>Loading...</span>
             </div>
@@ -44,8 +39,8 @@
               <div class="requisitions-data--table__cell">Date First</div>
               <div class="requisitions-data--table__cell">Date of Recent</div>
               <div sortable-column="id" class="requisitions-data--table__cell">Url</div>
-           </div>
-           
+            </div>
+
             <div class="requisitions-data--table__body">
               <div class="requisitions-data--table__row" [@fade] *ngFor="let requisition of pagedRequisitionsList ">
                 <div class="requisitions-data--table__cell">
@@ -71,7 +66,7 @@
                 <div class="requisitions-data--table__cell">{{ requisition.date_first }}</div>
                 <div class="requisitions-data--table__cell">{{ requisition.date_recent }}</div>
                 <div class="requisitions-data--table__cell">{{ requisition.url }}</div>
-            </div>
+              </div>
             </div>
           </div>
         </div>

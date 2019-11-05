@@ -47,42 +47,14 @@ describe('AppComponent', () => {
     expect(modalService.open).toHaveBeenCalledWith('show-requisitions');
     const compiled = fixtureUnderTest.nativeElement;
     expect(compiled.querySelector('h3'));
-    
-console.log('test',componentUnderTest);
-   // expect(modalService.open).toHaveBeenCalledWith('show-requisitions');
-  
-    // app.openModal('');
-    // expect(modalService.open).toHaveBeenCalledWith('<xxxx>', { size: 'lg' });
-    // const fixture = TestBed.createComponent(AppComponent);
-    // const app = fixture.componentInstance;
-    // console.log(app);
-    // expect(app.title).toEqual('app');
-    // const compiled = fixture.nativeElement;
-    // const evnt = compiled.querySelector('#show-requisitions--btn')
-
-    //evnt.click();
-    //  modalService = fixture.injector.get(ModalService);
-    //  console.log(modalService);
-    //app.openModal('show-requisitions');
-    //  const spyOpen= spyOn(modalService,'open');
-    //  console.log(spyOpen);
-    //  expect(spyOpen).toHaveBeenCalled();
-    //   expect(compiled.querySelector('h1').
-  }));
+    }));
 
   it(`should able to close modal '`, async(() => {
-
+    spyOn(modalService, 'close').and.returnValue('');
+    componentUnderTest.test1();
+    expect(modalService.close).toHaveBeenCalledWith('show-requisitions');
+    const compiled = fixtureUnderTest.nativeElement;
+    expect(compiled.querySelector('h3'));
   }));
 
-  it(`should able load data by calling loadMyRequisitions function '`, async(() => {
-
-  }));
-
-  it(`should able move to next page using goto function '`, async(() => {
-
-  }));
-
-  it(`should able move to prev page using goto function '`, async(() => {
-
-  }));
 });

@@ -106,6 +106,10 @@ test(){
   this.openModal('show-requisitions');
 }
 
+
+test1(){
+  this.closeModal('show-requisitions');
+}
   onSorted($event) {
     this.goto(this.pager.currentPage, $event);
   }
@@ -115,19 +119,6 @@ test(){
   ) {
     this.active = 'myrequisitions';
     this.loading = true;
-    // this.requisitionService = this.requisitionService.slice(
-    //   this.pager.startIndex,
-    //   this.pager.endIndex + 1
-    // );
-
-    // this.pagedRequisitionsList = this.requisitionService.findAll()t.sort((a, b) => {
-    //   if (criteria.sortDirection === 'desc') {
-    //     return a[criteria.sortColumn] < b[criteria.sortColumn] ? 1 : -1;
-    //   } else {
-    //     return a[criteria.sortColumn] > b[criteria.sortColumn] ? 1 : -1;
-    //   }
-    // });
-
     this.requisitionService.findAll().subscribe(requisitions => {
       console.log('---------this.requisitionService---------', requisitions);
       this.requisitionsList = requisitions
