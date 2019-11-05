@@ -7,27 +7,7 @@
       </button>
 
       <div class="requisitions-container">
-        <!-- <h1 class="requisitions-add">Add Sarah Gutierrez to Requisition</h1> -->
-
-        <!-- <div class="requisitions-tabs">
-          <button (click)="loadMyRequisitions()" class="requisitions-tabs-btn" [ngClass]="{'active': active === 'myrequisitions' }">My Requisitions</button>
-          <button (click)="loadAllRequisitions()" class="requisitions-tabs-btn" [ngClass]="{'active': active === 'allrequisitions' }">All Requisitions</button>
-        </div> -->
-        <!-- end requisitions tabs -->
-
-        <!-- <div class="requisitions-search">
-          <label for="search" class="requisitions-search--label">
-            Search for keywords
-          </label>
-          <div class="requisitions-search--control">
-            <input [(ngModel)]="requisitionSearchText" id="search" class="requisitions-search--control__input" placeholder="Search by Requisition Name, Requisition ID, Recruiter, Hiring Manager"
-              type="text" autocomplete="off" />
-            <div id="icon" class="requisitions-search--control__icon">
-              <i class="ion-ios-search-strong"></i>
-            </div>
-          </div>
-        </div> -->
-        <!-- end requisitions-search -->
+    
 
         <div class="requisitions-data">
           <div class="requisitions-data--meta">
@@ -67,7 +47,7 @@
            </div>
            
             <div class="requisitions-data--table__body">
-              <div class="requisitions-data--table__row" [@fade] *ngFor="let requisition of requisitionsList ">
+              <div class="requisitions-data--table__row" [@fade] *ngFor="let requisition of pagedRequisitionsList ">
                 <div class="requisitions-data--table__cell">
                   <input type="checkbox" />
                 </div>

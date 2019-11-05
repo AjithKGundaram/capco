@@ -101,6 +101,11 @@ export default class AppComponent implements OnInit {
     // return this.pagedRequisitionsList;
   }
 
+
+test(){
+  this.openModal('show-requisitions');
+}
+
   onSorted($event) {
     this.goto(this.pager.currentPage, $event);
   }
@@ -139,21 +144,4 @@ export default class AppComponent implements OnInit {
     });
   }
 
-  // loadAllRequisitions(
-  //   criteria: any = { sortColumn: 'id', sortDirection: 'asc' }
-  // ) {
-  //   this.active = 'allrequisitions';
-  //   this.loading = true;
-  //   this.requisitionService.findAll().subscribe(requisitions => {
-  //     this.requisitionsList = requisitions.sort((a, b) => {
-  //       if (criteria.sortDirection === 'desc') {
-  //         return a[criteria.sortColumn] < b[criteria.sortColumn] ? 1 : -1;
-  //       } else {
-  //         return a[criteria.sortColumn] > b[criteria.sortColumn] ? 1 : -1;
-  //       }
-  //     });
-  //     this.goto(1, criteria);
-  //     this.loading = false;
-  //   });
-  // }
 }
